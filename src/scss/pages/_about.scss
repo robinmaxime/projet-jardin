@@ -1,0 +1,41 @@
+.about {
+   & p + h2 {
+      margin-top: 30px;
+   }
+
+   & p {
+      margin-bottom: 15px;
+   }
+
+   &__blocks {
+      display: flex;
+      gap: 50px;
+   }
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid $primaryColor;
+      border-radius: 10px;
+      width: 30%;
+      padding: 10px 20px;
+
+      & .svg-inline--fa {
+         font-size: 30px;
+         color: $primaryColor;
+      }
+      & p {
+         color: $primaryColor;
+         font-size: 25px;
+         font-weight: 600;
+         text-align: center;
+         margin: 0;
+      }
+   }
+
+   & .hero {
+      margin-top: 70px;
+   }
+}
