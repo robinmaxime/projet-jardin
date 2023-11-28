@@ -1,0 +1,9 @@
+.tag {
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   justify-content: center;
+   padding: 3px 15px;
+   border: 1px solid $primaryColor;
+   border-radius: 5px;
+}
