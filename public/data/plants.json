@@ -1,0 +1,70 @@
+{
+   "categories": [
+      { "id": 1, "name": "Plante grasse" },
+      { "id": 2, "name": "Plante fleurie" },
+      { "id": 3, "name": "Plante verte" },
+      { "id": 4, "name": "Fruitier" }
+   ],
+   "plants": [
+      {
+         "id": 1,
+         "categoryId": 4,
+         "imageUrl": ["/assets/plants/figuier.jpg", "/assets/plants/figuier.webp"],
+         "imageDescription": "Figuier",
+         "name": "Figuier",
+         "maturityHeight": 500,
+         "price": 2,
+         "sunshine": 3,
+         "watering": 2,
+         "advice": "Il se développe très bien dans nos régions à condition de l'exposer correctement et de le protéger l'hiver. Le figuier est rustique à -15°C, mais il a besoin de beaucoup de soleil et d'être abrité du vent."
+      },
+      {
+         "id": 2,
+         "categoryId": 1,
+         "imageUrl": ["/assets/plants/aloevera.jpg", "/assets/plants/aloevera.webp"],
+         "imageDescription": "Aloe vera",
+         "name": "Aloe vera",
+         "maturityHeight": 60,
+         "price": 1,
+         "sunshine": 2,
+         "watering": 1,
+         "advice": "Arrosez votre Aloe Vera de façon régulière, mais en faible quantité. Vous devez humidifier toute la motte. Adaptez cet arrosage selon la taille de votre plante."
+      },
+      {
+         "id": 3,
+         "categoryId": 2,
+         "imageUrl": ["/assets/plants/lys.jpg", "/assets/plants/lys.webp"],
+         "imageDescription": "Lys",
+         "name": "Lys",
+         "maturityHeight": 170,
+         "price": 2,
+         "sunshine": 3,
+         "watering": 2,
+         "advice": "Le lys a besoin de beaucoup de luminosité et supporte les rayons directs du soleil une bonne partie de la journée. En intérieur, il est conseillé de le disposer au plus près d'une fenêtre."
+      },
+      {
+         "id": 4,
+         "categoryId": 3,
+         "imageUrl": ["/assets/plants/plante_palmier.jpg", "/assets/plants/plante_palmier.webp"],
+         "imageDescription": "Plante palmier",
+         "name": "Plante palmier",
+         "maturityHeight": 210,
+         "price": 3,
+         "sunshine": 2,
+         "watering": 3,
+         "advice": "Placez-le dans un endroit très éclairé et loin des sources de chaleur. Il a besoin d'une température ambiante comprise entre 18 et 26 oC. Arrosez généreusement et fréquemment pour garder la terre humide mais sans excès. Nettoyez les feuilles délicatement avec une éponge légèrement humide."
+      },
+      {
+         "id": 5,
+         "categoryId": 1,
+         "imageUrl": ["/assets/plants/cactus.jpg", "/assets/plants/cactus.webp"],
+         "imageDescription": "Cactus",
+         "name": "Cactus",
+         "maturityHeight": 40,
+         "price": 1,
+         "sunshine": 3,
+         "watering": 1,
+         "advice": "Plantez vos cactus en plein soleil, dans une terre légère, sableuse, ne retenant pas l'eau. Dans la maison, placez les cactées derrière une fenêtre afin qu'ils bénéficient de la meilleure luminosité. Évitez tout excès d'arrosage qui pourrait leur être fatal !"
+      }
+   ]
+}
