@@ -10,7 +10,7 @@ function AboutPreview() {
          <h2>Découvrez-nous</h2>
          <Hero
             isImageRounded={true}
-            isImageLeft={false}
+            variant="left"
             imageUrl="/assets/jardiniers"
             imageDescription="Jardiniers"
             buttonText="En savoir plus"

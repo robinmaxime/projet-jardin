@@ -7,6 +7,7 @@ import Button from "../Button";
  * @param {string} buttonText Titre du bouton dans le Hero
  * @param {string} buttonUrl Adresse Url du bouton
  * @param {bool} isImageRounded indique si l'image doit avoir les coins arrondis
+ * @param {string} variant variante de disposition pour l'image (left ou right)
  * @param {string} imageUrl Adresse Url de l'image
  * @param {string} imageDescription Description de l'image (ALT)
 
