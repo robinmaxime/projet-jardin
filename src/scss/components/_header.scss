@@ -1,0 +1,36 @@
+.header {
+   background-color: $primaryColor;
+   font-weight: 500;
+
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+   }
+
+   &__name {
+      font-family: Rubik, sans-serif;
+      font-weight: 500;
+      font-size: 38px;
+      color: white;
+   }
+
+   &__nav {
+      display: flex;
+      gap: 4vw;
+   }
+
+   &__link {
+      color: white;
+      border-bottom: 2px solid transparent;
+      padding-top: 6px;
+      padding-bottom: 5px;
+      transition: border-color 0.25s;
+
+      &:hover,
+      &.active {
+         border-color: $secondaryColor;
+      }
+   }
+}
