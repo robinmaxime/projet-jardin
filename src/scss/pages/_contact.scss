@@ -1,0 +1,73 @@
+.contact {
+   display: flex;
+   flex-direction: column;
+
+   &__content {
+      display: flex;
+   }
+   &__aside {
+      width: 20%;
+      padding: $defaultPadding;
+      background-color: $primaryColor;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 70px;
+      color: white;
+      font-size: 30px;
+   }
+
+   &__image {
+      width: 100%;
+   }
+
+   &__section {
+      flex-grow: 1;
+      padding: 0 30px;
+   }
+   &__blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+   &__block {
+      padding: $cardPadding;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: $cardShadow;
+
+      & .svg-inline--fa {
+         font-size: 30px;
+         color: $primaryColor;
+      }
+      & p:first-child {
+         margin-bottom: 20px;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
+   }
+   &__form {
+      display: flex;
+      align-items: center;
+      & div:last-child {
+         width: 30%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+   &__fields {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 70%;
+      & input,
+      & textarea {
+         border: 1px solid $primaryColor;
+         border-radius: 10px;
+         padding: 10px 15px;
+      }
+   }
+}
