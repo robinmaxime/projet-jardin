@@ -1,0 +1,22 @@
+.error {
+   text-align: center;
+   min-height: 600px;
+
+   &__title {
+      font-size: 100px;
+      margin-bottom: 100px;
+   }
+
+   &__subtitle {
+      margin-bottom: 100px;
+   }
+
+   &__link {
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.25s;
+      &:hover {
+         border-color: $primaryColor;
+      }
+   }
+}

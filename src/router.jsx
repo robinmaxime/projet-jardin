@@ -6,6 +6,7 @@ import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import Legal from "./Pages/Legal";
 import Policy from "./Pages/Policy";
+import Error from "./Pages/Error";
 
 function Router() {
    return (
@@ -18,6 +19,7 @@ function Router() {
                <Route path="/contact" element={<Contact />}></Route>
                <Route path="/legal" element={<Legal />}></Route>
                <Route path="/policy" element={<Policy />}></Route>
+               <Route path="*" element={<Error />} />
             </Route>
          </Routes>
       </BrowserRouter>

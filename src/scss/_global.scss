@@ -1,78 +1,79 @@
 body {
-    font-family: Karla, sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    background-color: $defaultBackgroundColor;
- }
- 
- body,
- ul,
- li,
- p,
- h1,
- h2,
- h3,
- h4 {
-    margin: 0;
-    padding: 0;
- }
- 
- ul,
- li {
-    list-style: none;
- }
- 
- a {
-    text-decoration: none;
-    color: black;
- }
- 
- .page-container {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: $defaultPadding;
- }
- 
- h1 {
-    font-size: 50px;
-    text-align: center;
-    margin: 0 0 50px 0;
- }
- 
- h2 {
-    font-size: 40px;
-    margin-bottom: 30px;
- }
- 
- h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
- }
- 
- input,
- textarea,
- button {
-    font-family: Karla, sans-serif;
-    font-size: 20px;
- }
- 
- .btn {
-    cursor: pointer;
-    border: none;
-    box-shadow: $buttonShadow;
-    padding: $buttonPadding;
-    border-radius: 5px;
-    background-color: $primaryColor;
-    color: white;
-    cursor: pointer;
- }
- 
- .separator {
-    height: 1px;
-    background-color: grey;
- }
- 
- .orange {
-    color: $secondaryColor;
- }
- 
+   font-family: Karla, sans-serif;
+   font-weight: 400;
+   font-size: 20px;
+   background-color: $defaultBackgroundColor;
+}
+
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
+   margin: 0;
+   padding: 0;
+}
+
+ul,
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+.page-container {
+   max-width: 1600px;
+   margin: 0 auto;
+   padding: $defaultPadding;
+}
+
+h1 {
+   font-size: 50px;
+   text-align: center;
+   margin: 0 0 50px 0;
+}
+
+h2 {
+   font-size: 40px;
+   margin-bottom: 30px;
+}
+
+h3 {
+   font-size: 30px;
+   margin-bottom: 10px;
+}
+
+input,
+textarea,
+button {
+   font-family: Karla, sans-serif;
+   font-size: 20px;
+}
+
+.btn {
+   cursor: pointer;
+   border: none;
+   box-shadow: $buttonShadow;
+   padding: $buttonPadding;
+   border-radius: 5px;
+   background-color: $primaryColor;
+   color: white;
+   cursor: pointer;
+}
+
+.separator {
+   height: 1px;
+   background-color: grey;
+}
+.green {
+   color: $primaryColor;
+}
+.orange {
+   color: $secondaryColor;
+}
