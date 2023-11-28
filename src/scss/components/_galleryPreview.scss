@@ -1,0 +1,22 @@
+.galeries-preview {
+   &__cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+   }
+   &__info {
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: $cardPadding;
+
+      & .svg-inline--fa {
+         color: $primaryColor;
+         font-size: 100px;
+      }
+      & h3,
+      & p {
+         text-align: center;
+      }
+   }
+}
