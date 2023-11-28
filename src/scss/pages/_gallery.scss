@@ -1,0 +1,46 @@
+.gallery {
+   text-align: center;
+   &__cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+   }
+
+   &__filter {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background-color: white;
+      border-radius: 25px;
+      padding: 2px;
+      box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: 0.1);
+      margin-bottom: 30px;
+   }
+
+   &__btn {
+      border: none;
+      border-radius: 25px;
+      background: none;
+      padding: $buttonPadding;
+      cursor: pointer;
+
+      &--selected {
+         background-color: $primaryColor;
+         color: white;
+      }
+   }
+   &__sort-blocks {
+      display: flex;
+      justify-content: space-between;
+      align-self: stretch;
+      margin-bottom: 30px;
+
+      & select {
+         font-size: 18px;
+         border: 1px solid $primaryColor;
+         background-color: white;
+         border-radius: 5px;
+         padding: 5px 12px;
+      }
+   }
+}
