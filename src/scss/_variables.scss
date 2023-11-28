@@ -14,7 +14,13 @@ $buttonShadow: 0 0 8px 2px
       $color: #000000,
       $alpha: 0.2,
    );
-   
+$cardShadow: 0 0 12px 0
+   rgba(
+      $color: #000000,
+      $alpha: 0.1,
+   );
+
 //padding
 $defaultPadding: 70px 30px;
 $buttonPadding: 12px 30px;
+$cardPadding: 30px;
