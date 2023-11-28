@@ -1,3 +1,4 @@
+import AboutPreview from "../../Components/AboutPreview";
 import Welcome from "../../Components/Welcome";
 
 /**
@@ -8,6 +9,7 @@ function Home() {
    return (
       <main className="home">
          <Welcome />
+         <AboutPreview />
       </main>
    );
 }
