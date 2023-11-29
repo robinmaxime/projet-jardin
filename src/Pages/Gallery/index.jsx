@@ -105,7 +105,7 @@ function Gallery() {
          <section className="gallery__cards">
             {plantsFiltered.map((plant, index) => (
                <Card
-                  key={`plant-${index}`}
+                  key={`plant-${Math.random()}`} // Math.random pour avoir une clef différente (permet à React de re-render le composant afin de faire l'animation)
                   imageUrl={plant.imageUrl}
                   imageDescription={plant.imageDescription}
                   name={plant.name}
@@ -117,6 +117,8 @@ function Gallery() {
                      setPlantSelected(plant);
                      setModalIsOpen(true);
                   }}
+                  className="fadein"
+                  style={{ animationDelay: (index + 1) * 0.25 + "s" }}
                />
             ))}
          </section>

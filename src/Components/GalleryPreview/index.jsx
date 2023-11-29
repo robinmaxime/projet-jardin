@@ -52,12 +52,12 @@ function GaleriesPreview() {
                         setModalIsOpen(true);
                      }}
                      className={cardsClass}
-                     style={{ "animation-delay": index * 0.25 + "s" }}
+                     style={{ animationDelay: index * 0.25 + "s" }}
                   />
                ))}
             <div
                className={`card gallery-preview__info ${cardsClass}`}
-               style={{ "animation-delay": "0.5s" }}
+               style={{ animationDelay: "0.5s" }}
             >
                <FontAwesomeIcon icon={faSeedling} />
                <h3>Découvrez toutes nos plantes</h3>
