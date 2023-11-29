@@ -1,7 +1,14 @@
 @import "./font.scss";
 @import "./variables.scss";
 @import "./global.scss";
+@import "./mixins";
 @import "./pages/home";
+@import "./pages/about";
+@import "./pages/gallery";
+@import "./pages/contact";
+@import "./pages/legal";
+@import "./pages/policy";
+@import "./pages/error";
 @import "./components/header";
 @import "./components/welcome";
 @import "./components/aboutPreview";
@@ -11,10 +18,4 @@
 @import "./components/galleryPreview";
 @import "./components/modal";
 @import "./components/footer";
-@import "./pages/about";
-@import "./pages/gallery";
-@import "./pages/contact";
-@import "./pages/legal";
-@import "./pages/policy";
-@import "./pages/error";
 @import "./components/scrollToTop";
