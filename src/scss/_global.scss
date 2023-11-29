@@ -77,3 +77,21 @@ button {
 .orange {
    color: $secondaryColor;
 }
+
+@keyframes moveRight {
+   0% {
+      transform: translateX(2000px);
+   }
+   100% {
+      transform: translateX(0px);
+   }
+}
+
+@keyframes moveLeft {
+   0% {
+      transform: translateX(-2000px);
+   }
+   100% {
+      transform: translateX(0px);
+   }
+}

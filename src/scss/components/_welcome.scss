@@ -10,6 +10,7 @@
 
    &__text {
       width: 50%;
+      animation: moveLeft 0.5s forwards;
    }
 
    &__title {
@@ -22,6 +23,8 @@
          width: 100%;
          border-radius: 50px;
          box-shadow: $defaultShadow;
+         transform: translateX(2000px);
+         animation: moveRight 0.5s 0.3s forwards;
       }
    }
 }
