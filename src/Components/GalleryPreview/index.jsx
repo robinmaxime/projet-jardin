@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PlantsContext } from "../../contexts/PlantsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 import Card from "../Card";
 import Button from "../Button";
 import Modal from "../Modal";
-import { isInViewport } from "../../helpers";
 
 /**
  * Composant affichant l'apperçu des plantes
@@ -15,27 +15,12 @@ function GaleriesPreview() {
    const { plants } = useContext(PlantsContext);
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const [plantSelected, setPlantSelected] = useState();
-   const [cardsClass, setCardsClass] = useState("");
-   const gallery = useRef();
-
-   useEffect(() => {
-      const handleScroll = () => {
-         // Test si la gallerie devient visible au scroll
-         if (isInViewport(gallery.current)) {
-            setCardsClass("fadein");
-         }
-      };
-      // Ecoute l'évènement scroll
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-         window.removeEventListener("scroll", handleScroll);
-      };
-   }, []);
+   const navigate = useNavigate();
 
    return (
       <section className="gallery-preview page-container">
          <h2>Les nouveautés</h2>
-         <div ref={gallery} className="gallery-preview__cards">
+         <div className="gallery-preview__cards">
             {plants &&
                plants.slice(0, 2).map((plant, index) => (
                   <Card
@@ -51,22 +36,24 @@ function GaleriesPreview() {
                         setPlantSelected(plant);
                         setModalIsOpen(true);
                      }}
-                     className={cardsClass}
+                     animated={true}
                      style={{ animationDelay: index * 0.25 + "s" }}
                   />
                ))}
-            <div
-               className={`card gallery-preview__info ${cardsClass}`}
-               style={{ animationDelay: "0.5s" }}
-            >
-               <FontAwesomeIcon icon={faSeedling} />
-               <h3>Découvrez toutes nos plantes</h3>
-               <p>
-                  Les plantes grasses, en passant par les plantes vivaces ou caduques, découvrez nos
-                  différentes plantes selon vos envies et vos besoins.
-               </p>
-               <Button url="/plants">Découvrir</Button>
-            </div>
+            <Card
+               icon={<FontAwesomeIcon icon={faSeedling} />}
+               name="Découvrez toutes nos plantes"
+               description="Les plantes grasses, en passant par les plantes vivaces ou caduques, découvrez nos
+               différentes plantes selon vos envies et vos besoins."
+               onClick={() => {
+                  navigate("/plants");
+                  window.scroll(0, 0);
+               }}
+               buttonTitle="Découvrir"
+               animated={true}
+               className="gallery-preview__info"
+               style={{ animationDelay: 2 * 0.25 + "s" }}
+            />
          </div>
          {modalIsOpen && (
             <Modal title={`Conseil - ${plantSelected.name}`} onClosed={() => setModalIsOpen(false)}>

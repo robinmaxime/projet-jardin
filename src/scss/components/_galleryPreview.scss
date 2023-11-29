@@ -3,24 +3,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 12px;
+      @include respond(tabletAndMobile) {
+         grid-template-columns: 1fr;
+      }
    }
    & .card {
       opacity: 0;
    }
-   &__info {
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      padding: $cardPadding;
-      opacity: 0;
-
-      & .svg-inline--fa {
-         color: $primaryColor;
-         font-size: 100px;
-      }
-      & h3,
-      & p {
-         text-align: center;
-      }
+   &__info .card__button {
+      margin-top: 20px;
    }
 }
