@@ -1,0 +1,20 @@
+.scrolltotop {
+   background-color: lighten($color: $primaryColor, $amount: 5%);
+   box-shadow: $buttonShadow;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   width: 50px;
+   height: 50px;
+   border-radius: 25px;
+   position: fixed;
+   bottom: 50px;
+   right: 50px;
+   cursor: pointer;
+   z-index: 100;
+
+   &--hidden {
+      display: none;
+   }
+}
