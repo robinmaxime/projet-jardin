@@ -1,10 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { PlantsContext } from "../../contexts/PlantsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 import Card from "../Card";
 import Button from "../Button";
 import Modal from "../Modal";
+import { isInViewport } from "../../helpers";
 
 /**
  * Composant affichant l'apperçu des plantes
@@ -14,11 +15,27 @@ function GaleriesPreview() {
    const { plants } = useContext(PlantsContext);
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const [plantSelected, setPlantSelected] = useState();
+   const [cardsClass, setCardsClass] = useState("");
+   const gallery = useRef();
+
+   useEffect(() => {
+      const handleScroll = () => {
+         // Test si la gallerie devient visible au scroll
+         if (isInViewport(gallery.current)) {
+            setCardsClass("fadein");
+         }
+      };
+      // Ecoute l'évènement scroll
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+      };
+   }, []);
 
    return (
-      <section className="galeries-preview page-container">
+      <section className="gallery-preview page-container">
          <h2>Les nouveautés</h2>
-         <div className="galeries-preview__cards">
+         <div ref={gallery} className="gallery-preview__cards">
             {plants &&
                plants.slice(0, 2).map((plant, index) => (
                   <Card
@@ -34,9 +51,14 @@ function GaleriesPreview() {
                         setPlantSelected(plant);
                         setModalIsOpen(true);
                      }}
+                     className={cardsClass}
+                     style={{ "animation-delay": index * 0.25 + "s" }}
                   />
                ))}
-            <div className="card galeries-preview__info">
+            <div
+               className={`card gallery-preview__info ${cardsClass}`}
+               style={{ "animation-delay": "0.5s" }}
+            >
                <FontAwesomeIcon icon={faSeedling} />
                <h3>Découvrez toutes nos plantes</h3>
                <p>

@@ -16,3 +16,21 @@ export const convertCentimeterToMeter = (unit) => {
       ) + "m"
    );
 };
+
+/**
+ * Indique si l'élément du DOM est visible dans le viewport
+ * @param {object} element element du DOM
+ * @returns Boolean
+ */
+export const isInViewport = (element) => {
+   // obtient les coordonnées de l'élément (top, left, bottom, right)
+   const rect = element.getBoundingClientRect();
+   // obtient la position de la moitié du block (axe Y)
+   const midY = rect.top + rect.height / 2;
+   return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      midY <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+   );
+};

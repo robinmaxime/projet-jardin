@@ -78,6 +78,19 @@ button {
    color: $secondaryColor;
 }
 
+.fadein {
+   animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
 @keyframes moveRight {
    0% {
       transform: translateX(2000px);

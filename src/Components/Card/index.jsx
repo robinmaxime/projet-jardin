@@ -14,6 +14,8 @@ import Tag from "../Tag";
  * @param {number} sunshine échelle d'ensoleillement de la plante (de 1 à 3)
  * @param {number} watering échelle d'arrosage de la plante (de 1 à 3)
  * @param {func} onClick méthode à éxecuter pour afficher la modale
+ * @param {string} className classe à affecter à la card
+ * @param {object} style applique le style css
  * @returns JSX.element
  */
 function Card({
@@ -25,6 +27,8 @@ function Card({
    sunshine,
    watering,
    onClick,
+   className,
+   style,
 }) {
    // Ajoute les symboles sunshine, watering et price selon leur quantité
    let priceSymbol = "";
@@ -42,7 +46,7 @@ function Card({
    }
 
    return (
-      <article className="card">
+      <article className={`card ${className ? className : ""}`} style={style}>
          <picture>
             <source
                srcSet={imageUrl.find((element) => element.endsWith(".webp"))}
@@ -85,6 +89,8 @@ Card.propTypes = {
    sunshine: PropTypes.number,
    watering: PropTypes.number,
    onClick: PropTypes.func.isRequired,
+   className: PropTypes.string,
+   style: PropTypes.object,
 };
 
 export default Card;
