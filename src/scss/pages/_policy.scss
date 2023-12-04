@@ -1,5 +1,8 @@
 .policy {
    & p {
       margin-bottom: 15px;
+      @include respond(mobile) {
+         padding: 0 30px;
+      }
    }
 }
