@@ -16,6 +16,7 @@ function Gallery() {
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const [plantSelected, setPlantSelected] = useState();
    const [mobileFilterIsOpen, setMobileFilterIsOpen] = useState(false);
+   const [random, setRandom] = useState(Math.random());
 
    const plantsFiltered = useMemo(() => {
       let filtered;
@@ -54,6 +55,9 @@ function Gallery() {
          default:
             break;
       }
+
+      setRandom(Math.random()); // permet l'animation des cards quand un filtre est appliqué
+
       return filtered;
    }, [plants, categorySelected, selectedSort]);
 
@@ -127,7 +131,7 @@ function Gallery() {
          <section className="gallery__cards">
             {plantsFiltered.map((plant, index) => (
                <Card
-                  key={`plant-${Math.random()}`} // Math.random pour avoir une clef différente (permet à React de re-render le composant afin de faire l'animation)
+                  key={`plant-${random}-${index}`}
                   imageUrl={plant.imageUrl}
                   imageDescription={plant.imageDescription}
                   name={plant.name}
