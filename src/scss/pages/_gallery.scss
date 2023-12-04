@@ -1,9 +1,16 @@
 .gallery {
    text-align: center;
+
    &__cards {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 12px;
+      @include respond(smallDesktop) {
+         grid-template-columns: 1fr 1fr;
+      }
+      @include respond(tabletAndMobile) {
+         grid-template-columns: 1fr;
+      }
    }
 
    &__filter {
@@ -15,25 +22,65 @@
       padding: 2px;
       box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: 0.1);
       margin-bottom: 30px;
+
+      &--opened {
+         @include respond(tabletAndMobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 120px 60px;
+            position: fixed;
+            inset: 0;
+            z-index: 900;
+            border-radius: unset;
+            margin-bottom: 0;
+            box-shadow: unset;
+            gap: 20px;
+         }
+      }
+
+      &--closed {
+         @include respond(tabletAndMobile) {
+            display: none;
+         }
+      }
+   }
+
+   &__open-filter {
+      display: none;
+      margin-bottom: 25px;
+      @include respond(tabletAndMobile) {
+         display: unset;
+      }
    }
 
    &__btn {
       border: none;
-      border-radius: 25px;
+      border-radius: 60px;
       background: none;
       padding: $buttonPadding;
       cursor: pointer;
-
+      flex-shrink: 0;
+      @include respond(tabletAndMobile) {
+         font-size: 30px;
+      }
       &--selected {
          background-color: $primaryColor;
          color: white;
       }
    }
+   &__btn-close {
+      color: black;
+   }
    &__sort-blocks {
       display: flex;
       justify-content: space-between;
-      align-self: stretch;
+      align-items: center;
       margin-bottom: 30px;
+      @include respond(mobile) {
+         flex-direction: column;
+         gap: 20px;
+      }
 
       & select {
          font-size: 18px;

@@ -4,18 +4,33 @@
 
    &__content {
       display: flex;
+      @include respond(smallDesktopAndTabletAndMobile) {
+         flex-direction: column;
+         gap: 15px;
+      }
    }
    &__aside {
       width: 20%;
-      padding: $defaultPadding;
+      padding: 20px;
       background-color: $primaryColor;
       border-radius: 20px;
+      color: white;
+      font-size: 30px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 70px;
-      color: white;
-      font-size: 30px;
+      align-items: center;
+      gap: 50px;
+      @include respond(smallDesktopAndTabletAndMobile) {
+         width: unset;
+         gap: 10px;
+      }
+      @include respond(mobile) {
+         border-radius: unset;
+      }
+      & p {
+         text-align: center;
+      }
    }
 
    &__image {
@@ -25,6 +40,9 @@
    &__section {
       flex-grow: 1;
       padding: 0 30px;
+      @include respond(smallDesktopAndTabletAndMobile) {
+         padding: 0;
+      }
    }
    &__blocks {
       display: flex;
@@ -36,6 +54,9 @@
       background-color: white;
       border-radius: 20px;
       box-shadow: $cardShadow;
+      @include respond(mobile) {
+         border-radius: unset;
+      }
 
       & .svg-inline--fa {
          font-size: 30px;
@@ -51,6 +72,10 @@
    &__form {
       display: flex;
       align-items: center;
+      @include respond(tabletAndMobile) {
+         flex-direction: column;
+         gap: 20px;
+      }
       & div:last-child {
          width: 30%;
          display: flex;
@@ -63,6 +88,9 @@
       flex-direction: column;
       gap: 10px;
       width: 70%;
+      @include respond(mobile) {
+         width: 100%;
+      }
       & input,
       & textarea {
          border: 1px solid $primaryColor;

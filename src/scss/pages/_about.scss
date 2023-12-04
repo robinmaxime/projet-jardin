@@ -7,9 +7,19 @@
       margin-bottom: 15px;
    }
 
+   & h2 {
+      @include respond(mobile) {
+         text-align: center;
+      }
+   }
    &__blocks {
-      display: flex;
-      gap: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: calc(10px + 2vw);
+      @include respond(mobile) {
+         grid-template-columns: 1fr;
+         padding: 0 10px;
+      }
    }
 
    &__block {
@@ -19,7 +29,6 @@
       gap: 10px;
       border: 2px solid $primaryColor;
       border-radius: 10px;
-      width: 30%;
       padding: 10px 20px;
 
       & .svg-inline--fa {

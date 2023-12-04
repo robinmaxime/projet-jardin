@@ -2,6 +2,8 @@ import { useContext, useMemo, useState } from "react";
 import { PlantsContext } from "../../contexts/PlantsContext";
 import Card from "../../Components/Card";
 import Modal from "../../Components/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Composant affichant la page "nos plantes"
@@ -13,6 +15,7 @@ function Gallery() {
    const [selectedSort, setSelectedSort] = useState("choose");
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const [plantSelected, setPlantSelected] = useState();
+   const [mobileFilterIsOpen, setMobileFilterIsOpen] = useState(false);
 
    const plantsFiltered = useMemo(() => {
       let filtered;
@@ -57,11 +60,22 @@ function Gallery() {
    return (
       <main className="gallery page-container">
          <h1>Nos plantes</h1>
-         <div className="gallery__filter">
+         <div
+            className={`gallery__filter ${
+               mobileFilterIsOpen ? "gallery__filter--opened" : "gallery__filter--closed"
+            }`}
+         >
+            <button
+               className="btn-close gallery__btn-close"
+               onClick={() => setMobileFilterIsOpen(false)}
+            >
+               <FontAwesomeIcon icon={faXmark} />
+            </button>
             <button
                className={`gallery__btn ${categorySelected === 0 ? "gallery__btn--selected" : ""}`}
                onClick={() => {
                   setCategorySelected(0);
+                  setMobileFilterIsOpen(false);
                }}
             >
                Toutes
@@ -72,15 +86,23 @@ function Gallery() {
                   key={`category-${index}`}
                   className={`gallery__btn ${
                      categorySelected === category.id ? "gallery__btn--selected" : ""
-                  }`}
+                  } `}
                   onClick={() => {
                      setCategorySelected(category.id);
+                     setMobileFilterIsOpen(false);
                   }}
                >
                   {category.name}
                </button>
             ))}
          </div>
+         <button className="btn gallery__open-filter" onClick={() => setMobileFilterIsOpen(true)}>
+            Filtrer par :{" "}
+            {categorySelected === 0
+               ? "Toutes"
+               : categories.find((category) => category.id === categorySelected)?.name ??
+                 "non défini"}
+         </button>
          <div className="gallery__sort-blocks">
             <div>
                {plantsFiltered.length > 1

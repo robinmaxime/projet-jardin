@@ -2,15 +2,31 @@
    color: white;
    background-color: $primaryColor;
 
+   & .page-container {
+      @include respond(mobile) {
+         padding: 0;
+      }
+   }
+
    &__content {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @include respond(tabletAndMobile) {
+         flex-direction: column-reverse;
+         gap: 20px;
+      }
    }
 
    &__text {
       animation: moveLeft 0.5s forwards;
       width: 50%;
+      @include respond(tabletAndMobile) {
+         width: unset;
+      }
+      @include respond(mobile) {
+         padding: 30px;
+      }
    }
 
    &__title {
@@ -20,6 +36,9 @@
 
    &__image {
       width: 40%;
+      @include respond(tabletAndMobile) {
+         width: 100%;
+      }
 
       & img {
          width: 100%;
@@ -27,6 +46,16 @@
          box-shadow: $defaultShadow;
          transform: translateX(2000px);
          animation: moveRight 0.5s 0.3s forwards;
+         @include respond(tabletAndMobile) {
+            max-height: 350px;
+            object-fit: cover;
+         }
+         @include respond(tablet) {
+            border-radius: 20px;
+         }
+         @include respond(mobile) {
+            border-radius: 0;
+         }
       }
    }
 }
