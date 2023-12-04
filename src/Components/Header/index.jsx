@@ -65,7 +65,11 @@ function Header() {
                >
                   Contact
                </NavLink>
-               <button className="btn-close" onClick={() => setBurgerIsOpen(false)}>
+               <button
+                  className="btn-close"
+                  aria-label="fermer"
+                  onClick={() => setBurgerIsOpen(false)}
+               >
                   <FontAwesomeIcon icon={faXmark} />
                </button>
             </nav>

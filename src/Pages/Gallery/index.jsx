@@ -72,6 +72,7 @@ function Gallery() {
             <button
                className="btn-close gallery__btn-close"
                onClick={() => setMobileFilterIsOpen(false)}
+               aria-label="fermer"
             >
                <FontAwesomeIcon icon={faXmark} />
             </button>

@@ -40,13 +40,21 @@ function Contact() {
                      </p>
                      <form className="contact__form">
                         <div className="contact__fields">
-                           <input type="text" name="name" id="name" required placeholder="Nom *" />
+                           <input
+                              type="text"
+                              name="name"
+                              id="name"
+                              required
+                              placeholder="Nom *"
+                              aria-labelledby="name"
+                           />
                            <input
                               type="email"
                               name="email"
                               id="email"
                               required
                               placeholder="E-mail *"
+                              aria-labelledby="email"
                            />
                            <textarea
                               name="message"
