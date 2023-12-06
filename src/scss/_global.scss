@@ -57,6 +57,9 @@ textarea,
 button {
    font-family: Karla, sans-serif;
    font-size: 20px;
+   color: black;
+   padding: 0;
+   margin: 0;
 }
 
 select {
@@ -75,7 +78,6 @@ select {
    border-radius: 5px;
    background-color: $primaryColor;
    color: white;
-   cursor: pointer;
 }
 
 .btn-close {
