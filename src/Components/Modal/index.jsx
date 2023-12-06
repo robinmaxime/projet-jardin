@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 /**
- *
  * Composant affichant la modale
+ * @param {string} titre Titre de la modale
+ * @param {func} onClosed Fonction se déclenchant à la fermeture de la modale
  * @returns JSX.element
  */
 function Modal({ children, title, onClosed }) {
