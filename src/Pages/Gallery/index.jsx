@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useMemo, useState, useEffect } from "react";
 import { PlantsContext } from "../../contexts/PlantsContext";
 import Card from "../../Components/Card";
 import Modal from "../../Components/Modal";
@@ -60,6 +60,11 @@ function Gallery() {
 
       return filtered;
    }, [plants, categorySelected, selectedSort]);
+
+   // empeche le scroll lorsque le menu est ouvert en mobile
+   useEffect(() => {
+      document.body.style.overflow = modalIsOpen || mobileFilterIsOpen ? "hidden" : "auto";
+   }, [modalIsOpen, mobileFilterIsOpen]);
 
    return (
       <main className="gallery page-container">

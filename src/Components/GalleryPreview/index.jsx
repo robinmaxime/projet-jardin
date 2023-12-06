@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PlantsContext } from "../../contexts/PlantsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 import Card from "../Card";
-import Button from "../Button";
 import Modal from "../Modal";
 
 /**
@@ -16,6 +15,11 @@ function GaleriesPreview() {
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const [plantSelected, setPlantSelected] = useState();
    const navigate = useNavigate();
+
+   // empeche le scroll lorsque le menu est ouvert en mobile
+   useEffect(() => {
+      document.body.style.overflow = modalIsOpen ? "hidden" : "auto";
+   }, [modalIsOpen]);
 
    return (
       <section className="gallery-preview page-container">
